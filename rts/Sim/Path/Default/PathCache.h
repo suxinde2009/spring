@@ -3,11 +3,11 @@
 #ifndef PATHCACHE_H
 #define PATHCACHE_H
 
-#include <list>
-#include <map>
+#include <deque>
 
 #include "IPath.h"
 #include "System/type2.h"
+#include "System/UnorderedMap.hpp"
 
 class CPathCache
 {
@@ -75,8 +75,8 @@ private:
 	// returned on any cache-miss
 	CacheItem dummyCacheItem;
 
-	std::list<CacheQueItem> cacheQue;
-	std::map<std::uint64_t, CacheItem> cachedPaths; // ints are sync-safe keys
+	std::deque<CacheQueItem> cacheQue;
+	spring::unordered_map<std::uint64_t, CacheItem> cachedPaths; // ints are sync-safe keys
 
 	std::uint32_t numBlocksX;
 	std::uint32_t numBlocksZ;
