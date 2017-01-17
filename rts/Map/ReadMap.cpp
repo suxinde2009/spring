@@ -718,8 +718,8 @@ void CReadMap::UpdateLOS(const SRectangle& hmRect)
 	// This would make our update area 4x as large, so we need to make the rectangle a point. Better
 	// would be to use < instead of <= everywhere.
 	//FIXME: this actually causes spikes in the UHM
-	// hmPoint.x2 = hmPoint.x1;
-	// hmPoint.z2 = hmPoint.z1;
+	hmPoint.x2 = hmPoint.x1;
+	hmPoint.z2 = hmPoint.z1;
 
 	HeightMapUpdateLOSCheck(hmPoint);
 }
